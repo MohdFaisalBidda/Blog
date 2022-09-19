@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-let posts = [];
+let posts = [ ];
 
 
 
@@ -56,8 +56,8 @@ app.get("/posts/:postName",(req,res)=>{
   posts.forEach(function(post){
     const postedTitle =_.lowerCase(post.title);
 
-    if(postedTitle === requestedTitle){
-      res.render("post",{title:post.title, description:post.description})
+    if(postedTitle == requestedTitle){
+      res.render("post",{title: post.title, description: post.description})
     }
   })
 })
